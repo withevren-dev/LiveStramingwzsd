@@ -29,13 +29,16 @@ pip install -r requirements.txt
 
 ```bash
 # 기본: 무음 제거 + 인트로/아웃트로 제거 + 하이라이트 + 한글 스크립트
-PYTHONPATH=src python -m streamedit edit "방송VOD.mp4" -o out/ \
+python run.py edit "방송VOD.mp4" -o out/ \
     --intro-ref fixtures/opening.mp4 \
     --outro-ref fixtures/closing.mp4 \
     --chat-log chat.csv \
     --keep-ratio 0.35 \
     --whisper-model medium
 ```
+
+> `python run.py ...` 는 윈도우·맥·리눅스에서 동일하게 동작합니다.
+> (내부적으로 `python -m streamedit` 와 같지만 별도 경로 설정이 필요 없습니다.)
 
 출력물(`out/`):
 
@@ -66,9 +69,9 @@ PYTHONPATH=src python -m streamedit edit "방송VOD.mp4" -o out/ \
 세밀한 조정은 JSON 설정으로:
 
 ```bash
-PYTHONPATH=src python -m streamedit dump-config -o config.json   # 기본값 출력
+python run.py dump-config -o config.json   # 기본값 출력
 # config.json 편집 후
-PYTHONPATH=src python -m streamedit edit VOD.mp4 -o out/ --config config.json
+python run.py edit VOD.mp4 -o out/ --config config.json
 ```
 
 ## 각 단계 상세
