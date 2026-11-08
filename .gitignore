@@ -5,3 +5,6 @@ out/
 _work/
 *.mp4
 !samples/keep-*.mp4
+
+# Local clone of external tool (separate repo)
+OpenMontage/
